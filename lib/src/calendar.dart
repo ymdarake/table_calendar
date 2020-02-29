@@ -276,7 +276,7 @@ class _TableCalendarState extends State<TableCalendar> with SingleTickerProvider
   }
 
   void _onVerticalSwipe(DismissDirection direction) {
-    if (direction == DismissDirection.startToEnd) {
+    if (direction == DismissDirection.down) {
       // Swipe down
       _selectPrevious();
     } else {
