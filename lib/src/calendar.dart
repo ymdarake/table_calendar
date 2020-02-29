@@ -275,12 +275,12 @@ class _TableCalendarState extends State<TableCalendar> with SingleTickerProvider
     });
   }
 
-  void _onHorizontalSwipe(DismissDirection direction) {
+  void _onVerticalSwipe(DismissDirection direction) {
     if (direction == DismissDirection.startToEnd) {
-      // Swipe right
+      // Swipe down
       _selectPrevious();
     } else {
-      // Swipe left
+      // Swipe up
       _selectNext();
     }
   }
@@ -488,8 +488,8 @@ class _TableCalendarState extends State<TableCalendar> with SingleTickerProvider
       child: Dismissible(
         key: ValueKey(widget.calendarController._pageId),
         resizeDuration: null,
-        onDismissed: _onHorizontalSwipe,
-        direction: DismissDirection.horizontal,
+        onDismissed: _onVerticalSwipe,
+        direction: DismissDirection.vertical,
         child: child,
       ),
     );
